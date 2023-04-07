@@ -1,8 +1,12 @@
 {
-  "name": "chmod2",
-  "displayName": "chmod2",
+  "name": "chmod",
+  "displayName": "chmod",
   "description": "Adds executable permissions to file",
   "version": "0.0.1",
+  "publisher": "jamfea",
+  "repository": {
+    "url": "https://github.com/jamfea/chmod"
+  },
   "engines": {
     "vscode": "^1.77.0"
   },
@@ -14,14 +18,22 @@
   "contributes": {
     "commands": [
       {
-        "command": "chmod2.makeExecutable",
-        "title": "Chmod Make Executable"
+        "command": "chmod.makeExecutable",
+        "title": "Make file executable",
+        "shortTitle": "Make file executable"
       }
     ],
     "menus": {
+      "editor/context": [
+        {
+          "command": "chmod.makeExecutable",
+          "group": "z_commands"
+        }
+      ],
       "explorer/context": [
         {
-          "command": "chmod2.makeExecutable",
+          "when": "!explorerResourceIsFolder",
+          "command": "chmod.makeExecutable",
           "group": "z_commands"
         }
       ]

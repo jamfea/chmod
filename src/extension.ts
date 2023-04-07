@@ -8,7 +8,6 @@ export function activate(context: vscode.ExtensionContext) {
 
 	const chmodMakeExecutable = vscode.commands.registerCommand('chmod2.makeExecutable', (res: any) => {
 		chmod(res && res.resourceUri || res, true)
-			.then(() => vscode.window.showInformationMessage('Done'))
 			.catch(reason => vscode.window.showErrorMessage(reason.message))
 	});
 
